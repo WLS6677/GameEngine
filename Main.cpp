@@ -4,7 +4,8 @@
 
 int main()
 {
-	int pain = 69420;
-	std::cout << "kill me";
-	return pain;
+	int ScreenWidth = GetScreenWidth();
+	int ScreenHeight = GetScreenHeight();
+
+	InitWindow(ScreenWidth, ScreenHeight, "Bruh");
 }

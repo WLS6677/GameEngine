@@ -1,2 +1,4 @@
-s
-dvfgjhysanbfdsnjlf;dsfds
+namespace Constants
+{
+    
+}
