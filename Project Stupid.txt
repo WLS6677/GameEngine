@@ -1,0 +1,20 @@
+
+ok so we need to:
+
+	-Open a Window for the game
+
+	-Draw on that window
+		*png	*jpg	
+		*geometric shapes
+
+	-Make a gamefile folder for
+		*the executable file
+		*recources (audio & images)
+		*SaveFile
+
+	-Load and play Audio
+
+	-make a game loop
+
+ok so maybe we can organise our game like this
+	scenes & objects
