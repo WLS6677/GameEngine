@@ -1,7 +1,7 @@
 
 ok so we need to:
 
-	-Open a Window for the game
+DONE	-Open a Window for the game
 
 	-Draw on that window
 		*png	*jpg	
