@@ -1,0 +1,1 @@
+g++ -o Game src/*.cpp -Iinclude -Llib -lraylib -lopengl32 -lgdi32 -lwinmm
