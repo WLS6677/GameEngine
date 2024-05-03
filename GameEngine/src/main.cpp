@@ -17,10 +17,10 @@ int main()
 
         // Draw
         //----------------------------------------------------------------------------------
-        BeginDrawing();
-            ClearBackground(DARKGRAY);
-            DrawFPS(10,10);
-        EndDrawing();
+    BeginDrawing();
+        ClearBackground(DARKGRAY);
+        DrawFPS(10,10);
+    EndDrawing();
         //----------------------------------------------------------------------------------
     }
 
