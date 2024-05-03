@@ -2,12 +2,11 @@
 #include "raylib.h"
 #include <fstream>
 
-void StartGame()
+void StartGame(const GameSettings& settings)
 {
     // read the game files including:
     // - GameSettings.bin // for window size and refresh rate, fullscreen on/off, and all user settings
-    const int screenWidth = 800;
-    const int screenHeight = 450;
-    InitWindow(screenWidth, screenHeight, "Game");
-    SetTargetFPS(GetMonitorRefreshRate(0));
+
+    InitWindow(settings.ScreenWidth, settings.ScreenHeight, "Game");
+    SetTargetFPS(GetMonitorRefreshRate(settings.RefreshRate));
 }

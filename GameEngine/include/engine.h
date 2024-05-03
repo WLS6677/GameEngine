@@ -5,7 +5,7 @@
 
 // structs................................................................
 
-struct gameSettings
+struct GameSettings
 {
 
     // this struct will be used for settings variables that are changable by the player through the Settings UI.
@@ -15,8 +15,8 @@ struct gameSettings
 private:
     int ScreenWidth, ScreenHeight, RefreshRate;
 public:
-    gameSettings();
-    ~gameSettings();
+    GameSettings();
+    ~GameSettings();
 };
 
 // classes................................................................

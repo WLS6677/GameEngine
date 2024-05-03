@@ -5,7 +5,8 @@
 int main()
 {
 
-    StartGame();
+    GameSettings CurrentGameSettings;
+    StartGame(CurrentGameSettings);
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
