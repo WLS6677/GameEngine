@@ -15,7 +15,6 @@ public:
     void Update();
     
 };
-
 class Scene
 {
 private:
@@ -31,4 +30,4 @@ public:
     void AddObject(GameObject& object);        // adds the object to the scene.
 };
 
-void InitGame();
+void StartGame();
