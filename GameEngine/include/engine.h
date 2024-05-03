@@ -8,7 +8,7 @@
 struct gameSettings
 {
 
-    // this struct will be used for variables that are changable by the player through the Settings UI.
+    // this struct will be used for settings variables that are changable by the player through the Settings UI.
     // it will be stored in the resources folder as the GameSettings.bin file and it will be loaded during game runtime.
     // there will be only one GameSettings file with one of these "gameSettings" structs.
     
