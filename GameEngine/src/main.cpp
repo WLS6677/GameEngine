@@ -1,25 +1,17 @@
 #include <iostream>
-#include "test.h"
+#include "engine.h"
 #include "raylib.h"
 
 int main()
 {
-    fuck Me{69420};
-
-    Me.Fun();
-
-
-
-
-
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+    InitWindow(screenWidth, screenHeight, "Game");
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    SetTargetFPS(GetMonitorRefreshRate(0));               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
     // Main game loop
@@ -27,17 +19,14 @@ int main()
     {
         // Update
         //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
-        //----------------------------------------------------------------------------------
+
+        
 
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-
-            ClearBackground(RAYWHITE);
-
-            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
+            ClearBackground(DARKGRAY);
+            DrawFPS(10,10);
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
