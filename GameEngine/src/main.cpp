@@ -1,12 +1,14 @@
 #include <iostream>
-#include "engine.h"
-#include "raylib.h"
+#include "../include/engine.h"
+#include "../include/raylib.h"
 
 int main()
 {
 
     GameSettings CurrentGameSettings;
-    StartGame(CurrentGameSettings);
+    StartGame();
+
+    std::cout << sizeof(int) << std::endl;
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key

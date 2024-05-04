@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#define SETTINGS_FILE_BYTE_SIZE 0
 
 // structs................................................................
 
@@ -12,7 +13,7 @@ struct GameSettings
     // it will be stored in the resources folder as the GameSettings.bin file and it will be loaded during game runtime.
     // there will be only one GameSettings file with one of these "gameSettings" structs.
     
-private:
+
     int ScreenWidth, ScreenHeight, RefreshRate;
 public:
     GameSettings();
@@ -43,4 +44,4 @@ public:
 
 // functions................................................................
 
-void StartGame();
+void StartGame(const GameSettings& settings);
