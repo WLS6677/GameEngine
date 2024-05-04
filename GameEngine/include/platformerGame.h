@@ -13,25 +13,20 @@ class Player : GameObject
         Player();
         Vector2 GetPosition();
         Vector2 GetVelocity();
-<<<<<<< HEAD
 
         void PlayerMovement(); // need defining, call it in update() function
         void Update(); // needs defining
 
+
+
+
+
         bool PlayerLeftColliding();     // --| 
         bool PlayerRightColliding();    //   |
         bool PlayerBottomColliding();   //   |------------- collision functions, detect if player is colliding with anything; needs defining
-        bool PlayerTopColliding();      // --|
-};                                              
-=======
-
-        void PlayerMovement(); // need defining, call it in update() function
-        void Update(); // needs defining, 
-
-        void IsPlayerTouchingGround(); 
+        bool PlayerTopColliding();      // --|                                         
 
 };
->>>>>>> d0fe5801859523ffffd91046e5c0ea0e25d09057
 
 
 

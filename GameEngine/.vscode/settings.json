@@ -10,7 +10,8 @@
         "fstream": "cpp",
         "functional": "cpp",
         "limits": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

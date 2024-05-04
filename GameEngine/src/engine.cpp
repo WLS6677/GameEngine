@@ -1,6 +1,4 @@
 #include "../include/engine.h"
-#include "../include/raylib.h"
-#include <fstream>
 
 // structs................................................................
 
