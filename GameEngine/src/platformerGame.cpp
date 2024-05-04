@@ -3,15 +3,21 @@
 
 
 
-void PlayerMovement(Player& player)
+// classes................................................................
+
+Player::Player()
 {
-    vector2 player.pos, player.velocity
-    vector2 gravity = (0, 9.8);
-
-    
-    
-    UpdatePosition();              // Adds veolity to the pos and moves the player horizontally if he is holding down the movement buttons 
-
+    this->IsStatic = false;
+    this->position = Vector2(100.0f, 100.0f);
+    this->Velocity = Vector2(0.0f, 0.0f);
+}
+Vector2 Player::GetPosition()
+{
+    return this->position;
+}
+Vector2 Player::GetVelocity()
+{
+    return this->Velocity;
 }
 
 

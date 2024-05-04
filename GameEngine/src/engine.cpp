@@ -23,5 +23,5 @@ void StartGame(const GameSettings& settings)
     SetTargetFPS(GetMonitorRefreshRate(settings.RefreshRate));
 
     // load the main game scene
-    
+
 }

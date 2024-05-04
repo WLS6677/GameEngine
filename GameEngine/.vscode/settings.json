@@ -11,5 +11,6 @@
         "functional": "cpp",
         "limits": "cpp",
         "optional": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

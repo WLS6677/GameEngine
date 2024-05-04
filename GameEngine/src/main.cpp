@@ -11,7 +11,7 @@ int main()
 
     std::cout << sizeof(int) << std::endl;
 
-    Player Dave();
+    Player Dave;
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -26,6 +26,7 @@ int main()
     BeginDrawing();
         ClearBackground(DARKGRAY);
 
+        DrawCircle(Dave.GetPosition().GetX(),Dave.GetPosition().GetY(),20, WHITE);
         
         DrawFPS(10,10);
     EndDrawing();
