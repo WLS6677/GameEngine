@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/engine.h"
 #include "../include/raylib.h"
+#include "../include/platformerGame.h"
 
 int main()
 {
@@ -10,13 +11,15 @@ int main()
 
     std::cout << sizeof(int) << std::endl;
 
+    Player Dave();
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
 
-        
+        Dave.Update();
 
         // Draw
         //----------------------------------------------------------------------------------
