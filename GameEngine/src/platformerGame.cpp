@@ -10,5 +10,10 @@ void PlayerMovement(Player& player)
 
     
 
-    UpdatePosition();               // Adds veolity to the pos and moves the player horizontally if he is holding down the movement buttons
+    UpdatePosition();              // Adds veolity to the pos and moves the player horizontally if he is holding down the movement buttons 
+
 }
+
+
+
+

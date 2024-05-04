@@ -25,12 +25,19 @@ class GameObject
 {
 protected:
     std::string tag;            // useful if we want to categories similar objects.
+    bool IsStatic;              // for collision and graphics
 public:
     void Initialize();
     void Update();
 };
 class Scene
 {
+
+    //tasks: ----------------------------------------------------------------  
+    // #Handle Envirement collisions        ( runs a collision check once on all GameObjects in the scene with every static GameObject )
+    // #Hanlde Entity collisions            ( same one as in the physics simulator )
+
+
 private:
     std::vector<GameObject> objects;
 public:
