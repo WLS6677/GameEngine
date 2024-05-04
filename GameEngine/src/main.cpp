@@ -6,7 +6,7 @@ int main()
 {
 
     GameSettings CurrentGameSettings;
-    StartGame();
+    StartGame(CurrentGameSettings);
 
     std::cout << sizeof(int) << std::endl;
 
