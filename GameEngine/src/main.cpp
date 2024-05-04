@@ -6,10 +6,8 @@
 int main()
 {
 
-    GameSettings CurrentGameSettings;
+    GameSettings CurrentGameSettings; // this needs to be stored on the disk and loaded from it on runtime.
     StartGame(CurrentGameSettings);
-
-    std::cout << sizeof(int) << std::endl;
 
     Player Dave;
 
@@ -21,12 +19,17 @@ int main()
 
         Dave.Update();
 
+        if(IsKeyDown(KEY_A))
+        {
+            
+        }
+
         // Draw
         //----------------------------------------------------------------------------------
     BeginDrawing();
         ClearBackground(DARKGRAY);
 
-        DrawCircle(Dave.GetPosition().GetX(),Dave.GetPosition().GetY(),20, WHITE);
+        DrawCircle(Dave.GetPosition().GetX(),Dave.GetPosition().GetY(),20, WHITE); //this should be done by the scene
         
         DrawFPS(10,10);
     EndDrawing();

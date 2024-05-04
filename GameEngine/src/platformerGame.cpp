@@ -9,7 +9,7 @@ void PlayerMovement(Player& player)
     if(IsKeyDown(KEY_A) == true) {
         Vector2 position.x = position.x + 10;
     }
-
+ 
     if(IsKeyDown(KEY_D) == true) {
         Vector2 position.x = position.x - 10;
     }
