@@ -7,14 +7,24 @@
 
 class Player : GameObject 
 {
-private:
-    Vector2 position, Velocity;
-public:
-    Player();
-    Vector2 GetPosition();
-    Vector2 GetVelocity();
+    private:
+        Vector2 position, Velocity;
+    public:
+        Player();
+        Vector2 GetPosition();
+        Vector2 GetVelocity();
 
-    void PlayerMovement(); // need defining, call it in update() function
-    void Update(); // needs defining
+        void PlayerMovement(); // need defining, call it in update() function
+        void Update(); // needs defining, 
+
+        void IsPlayerTouchingGround(); 
+
 };
+
+
+
+
+
+
+
 
