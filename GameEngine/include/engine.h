@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include "../include/raylib.h"
 #define SETTINGS_FILE_BYTE_SIZE 0
 
 // structs................................................................
