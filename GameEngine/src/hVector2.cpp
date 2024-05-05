@@ -1,4 +1,4 @@
-#include "../include/Vector2.h"
+#include "../include/hVector2.h"
 
 
 
@@ -31,76 +31,76 @@ float Q_rsqrt(float number)
 
 
 //struct Vector2
-Vector2::Vector2(const double& inputX, const double& inputY)
+hVector2::hVector2(const double& inputX, const double& inputY)
 {
 	x = inputX;
 	y = inputY;
 }
-Vector2::Vector2(const Vector2& otherVector)
+hVector2::hVector2(const hVector2& otherVector)
 {
 	this->x = otherVector.x;
 	this->y = otherVector.y;
 }
-Vector2::~Vector2()
+hVector2::~hVector2()
 {
 
 }
-void Vector2::SetX(const double& input)
+void hVector2::SetX(const double& input)
 {
 	this->x = input;
 }
-double Vector2::GetX()
+double hVector2::GetX()
 {
 	return this->x;
 }
-void Vector2::SetY(const double& input)
+void hVector2::SetY(const double& input)
 {
 	this->y = input;
 }
-double Vector2::GetY()
+double hVector2::GetY()
 {
 	return this->y;
 }
-void Vector2::operator=(const Vector2& secondVector)
+void hVector2::operator=(const hVector2& secondVector)
 {
 	this->x = secondVector.x;
 	this->y = secondVector.y;
 }
-void Vector2::operator+=(const Vector2& secondVector)
+void hVector2::operator+=(const hVector2& secondVector)
 {
 	this->x += secondVector.x;
 	this->y += secondVector.y;
 }
-void Vector2::operator-=(const Vector2& secondVector)
+void hVector2::operator-=(const hVector2& secondVector)
 {
 	this->x -= secondVector.x;
 	this->y -= secondVector.y;
 }
-Vector2 Vector2::operator+(const Vector2& secondVector)
+hVector2 hVector2::operator+(const hVector2& secondVector)
 {
-	Vector2 Output{ this->x + secondVector.x,this->y + secondVector.y };
+	hVector2 Output{ this->x + secondVector.x,this->y + secondVector.y };
 	return Output;
 }
-Vector2 Vector2::operator-(const Vector2& secondVector)
+hVector2 hVector2::operator-(const hVector2& secondVector)
 {
-	Vector2 Output{ this->x - secondVector.x,this->y - secondVector.y };
+	hVector2 Output{ this->x - secondVector.x,this->y - secondVector.y };
 	return Output;
 }
-Vector2 Vector2::operator*(const double& input)
+hVector2 hVector2::operator*(const double& input)
 {
-	Vector2 Output{ this->x * input,this->y * input };
+	hVector2 Output{ this->x * input,this->y * input };
 	return Output;
 }
-Vector2 Vector2::operator/(const double& input)
+hVector2 hVector2::operator/(const double& input)
 {
-	Vector2 Output{ this->x / input,this->y / input };
+	hVector2 Output{ this->x / input,this->y / input };
 	return Output;
 }
-Vector2 Vector2::GetNormal()
+hVector2 hVector2::GetNormal()
 {
 	return *this * (double)Q_rsqrt((this->x * this->x) + (this->y * this->y));
 }
-double Vector2::GetMagnitude()
+double hVector2::GetMagnitude()
 {
 	return 1 / Q_rsqrt((this->x * this->x) + (this->y * this->y));
 }

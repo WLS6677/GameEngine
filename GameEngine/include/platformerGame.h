@@ -1,6 +1,8 @@
 #include "../include/engine.h"
-#include "../include/Vector2.h"
-#define GRAVITY_CONSTANT -9.8
+#include "../include/hVector2.h"
+#define GRAVITY_VECTOR_CONSTANT (hVector2){0, 9.8}
+#define GO_LEFT_KEY KEY_A   // should be in settings
+#define GO_RIGHT_KEY KEY_D  // should be be in settings
 
 
 // classes................................................................
@@ -8,13 +10,14 @@
 class Player : GameObject 
 {
     private:
-        Vector2 position, Velocity;
+        hVector2 Position, Velocity;
     public:
         Player();
-        Vector2 GetPosition();
-        Vector2 GetVelocity();
+        hVector2 GetPosition();
+        hVector2 GetVelocity();
 
-        void PlayerMovement(); // need defining, call it in update() function
+        void PlayerMovement(const double& deletTime); // need defining, call it in update() function
+        void UpdatePosition(const double& deletTime);
         void Update(); // needs defining
 
 

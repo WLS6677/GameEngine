@@ -1,38 +1,47 @@
 #include "../include/platformerGame.h"
+#include "../include/raylib.h"
 
 
 
 // classes................................................................
 
-Player::Player()
-{
+Player::Player(){
     this->IsStatic = false;
-    this->position = Vector2(100.0f, 100.0f);
-    this->Velocity = Vector2(0.0f, 0.0f);
+    this->Position = hVector2(100.0f, 100.0f);
+    this->Velocity = hVector2(0.0f, 0.0f);
 }
-Vector2 Player::GetPosition()
-{
-    return this->position;
+hVector2 Player::GetPosition(){
+    return this->Position;
 }
-Vector2 Player::GetVelocity()
-{
+hVector2 Player::GetVelocity(){
     return this->Velocity;
 }
-void Player::PlayerMovement()
-{
-    if(IsKeyDown(KEY_A) == true) {
-        this->position += Vector2(0.0, 0.0);
+void Player::PlayerMovement(const double& deletTime){
+
+//handle Left&Right movement
+    if(IsKeyDown(GO_LEFT_KEY))
+    {
+        this->Position += hVector2(-100, 0.0) * deletTime;
     }
- 
-    if(IsKeyDown(KEY_D) == true) {
-        Vector2 position.x = position.x - 10;
+    if(IsKeyDown(GO_RIGHT_KEY))
+    {
+        this->Position += hVector2(+100, 0.0) * deletTime;
     }
 
+// handles velocity based movement
+    UpdatePosition(deletTime);              
 
-    UpdatePosition();              // Adds veolity to the pos and moves the player horizontally if he is holding down the movement buttons 
+}
+void Player::UpdatePosition(const double& deletTime) {
+    
+    this->Position += this->Velocity * deletTime;
 
 }
 
 
+// gets called every frame by the scene
+void Player::Update(){
+    PlayerMovement(GetFrameTime());
+}
 
 
