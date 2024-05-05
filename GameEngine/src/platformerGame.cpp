@@ -17,6 +17,22 @@ hVector2 Player::GetVelocity(){
     return this->Velocity;
 }
 void Player::PlayerMovement(const double& deletTime){
+//handles gravity based movement
+    if (!IsPlayerIsTouchingGround())
+    {
+        Velocity += GRAVITY_VECTOR_CONSTANT * deletTime;
+    }
+    else 
+    {
+        if (IsKeyDown(JUMP_KEY))
+        {
+            Velocity = hVector2(0, -100);
+        }
+        else
+        {
+            //code
+        }
+    }
 
 //handle Left&Right movement
     if(IsKeyDown(GO_LEFT_KEY))
@@ -32,14 +48,13 @@ void Player::PlayerMovement(const double& deletTime){
     UpdatePosition(deletTime);              
 
 }
-void Player::UpdatePosition(const double& deletTime) {
+bool Player::IsPlayerIsTouchingGround(){
     
-    this->Position += this->Velocity * deletTime;
-
 }
-
-
-// gets called every frame by the scene
+void Player::UpdatePosition(const double& deletTime){
+    this->Position += this->Velocity * deletTime;
+}
+// --- gets called every frame by the scene ---
 void Player::Update(){
     PlayerMovement(GetFrameTime());
 }
