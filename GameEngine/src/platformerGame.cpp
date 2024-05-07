@@ -30,26 +30,28 @@ void Player::PlayerMovement(const double& deletTime){
         }
         else
         {
-            //code
+            Velocity.SetY(0.0f);
         }
     }
 
 //handle Left&Right movement
-    if(IsKeyDown(GO_LEFT_KEY))
-    {
-        this->Position += hVector2(-100, 0.0) * deletTime;
-    }
-    if(IsKeyDown(GO_RIGHT_KEY))
+    if(IsKeyDown(GO_LEFT_KEY)) 
     {
         this->Position += hVector2(+100, 0.0) * deletTime;
     }
 
 // handles velocity based movement
-    UpdatePosition(deletTime);              
+    UpdatePosition(deletTime);          
 
-}
-bool Player::IsPlayerIsTouchingGround(){
+//bool Player::IsPlayerIsTouchingGround(){
     
+
+
+        // ight time to write the scene logic
+
+
+
+
 }
 void Player::UpdatePosition(const double& deletTime){
     this->Position += this->Velocity * deletTime;

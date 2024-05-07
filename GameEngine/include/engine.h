@@ -1,3 +1,4 @@
+#pragma once
 #include "raylib.h"
 #include "hVector2.h"
 #include <iostream>

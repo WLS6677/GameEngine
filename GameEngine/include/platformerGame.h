@@ -1,3 +1,4 @@
+#pragma once
 #include "engine.h"
 #include "hVector2.h"
 #define GRAVITY_VECTOR_CONSTANT (hVector2){0, 9.8}
@@ -23,13 +24,6 @@ class Player : GameObject
         void Update(); // needs defining
 
 
-
-
-
-        bool PlayerLeftColliding();     // --| 
-        bool PlayerRightColliding();    //   |
-        bool PlayerBottomColliding();   //   |------------- collision functions, detect if player is colliding with anything; needs defining
-        bool PlayerTopColliding();      // --|                                         
 
 };
 
