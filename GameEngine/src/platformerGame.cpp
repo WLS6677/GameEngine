@@ -1,5 +1,5 @@
-#include "../include/platformerGame.h"
-#include "../include/raylib.h"
+#include "platformerGame.h"
+#include "raylib.h"
 
 
 

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../include/engine.h"
-#include "../include/raylib.h"
-#include "../include/platformerGame.h"
+#include "engine.h"
+#include "raylib.h"
+#include "platformerGame.h"
 
 int main()
 {

@@ -1,4 +1,4 @@
-#include "../include/engine.h"
+#include "engine.h"
 
 // structs................................................................
 
@@ -20,3 +20,13 @@ void StartGame(const GameSettings& settings) {
     // load the main game scene
 
 }
+
+// classes ----------------------------------------------------------------
+
+void Scene::ExecuteVerletIntegration()
+{
+    // loop on all Game objects { write all of the non_static_objects into an array containing their indecie in the scene }
+    // then create a hash array using the objects position
+    // we u 
+}
+

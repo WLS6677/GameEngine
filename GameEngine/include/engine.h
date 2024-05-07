@@ -1,5 +1,5 @@
-#include "../include/raylib.h"
-#include "../include/hVector2.h"
+#include "raylib.h"
+#include "hVector2.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -43,11 +43,15 @@ class Scene
 private:
     std::vector<GameObject> objects;
 public:
+////////////////////////////////core////////////////////////////////
     Scene();
     ~Scene();
     void InitializeScene();                    // load the scene from memory and call the intitialize() function for each object.
     void UpdateScene();                        // call Update() for each object in the scene.
     void AddObject(GameObject& object);        // adds the object to the scene.
+////////////////////////////////Optional/Features////////////////////////////////
+    void ExecuteVerletIntegration();           
+
 };
 
 // functions................................................................
