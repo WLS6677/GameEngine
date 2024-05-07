@@ -37,6 +37,10 @@ void Player::PlayerMovement(const double& deletTime){
 //handle Left&Right movement
     if(IsKeyDown(GO_LEFT_KEY)) 
     {
+        this->Position += hVector2(-100, 0.0) * deletTime;
+    }
+    if(IsKeyDown(GO_RIGHT_KEY)) 
+    {
         this->Position += hVector2(+100, 0.0) * deletTime;
     }
 
@@ -55,6 +59,10 @@ void Player::PlayerMovement(const double& deletTime){
 }
 void Player::UpdatePosition(const double& deletTime){
     this->Position += this->Velocity * deletTime;
+}
+bool Player::IsPlayerIsTouchingGround()
+{
+    return false;
 }
 // --- gets called every frame by the scene ---
 void Player::Update(){
