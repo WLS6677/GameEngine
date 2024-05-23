@@ -4,18 +4,25 @@
 
 // classes................................................................
 
-Player::Player(){
+Player::Player() {
     IsStatic = false;
     Position = hVector2(100.0f, 100.0f);
     Velocity = hVector2(0.0f, 0.0f);
 }
-hVector2 Player::GetPosition(){
+void Player::Init() {
+
+}
+void Player::Update() {
+
+}
+
+hVector2 Player::GetPosition() {
     return this->Position;
 }
-hVector2 Player::GetVelocity(){
+hVector2 Player::GetVelocity() {
     return this->Velocity;
 }
-void Player::PlayerMovement(const double& deletTime){
+void Player::PlayerMovement(const double& deletTime) {
 //handles gravity based movement
     if (!IsPlayerIsTouchingGround())
     {
@@ -57,17 +64,13 @@ void Player::PlayerMovement(const double& deletTime){
 
 
 }
-void Player::UpdatePosition(const double& deletTime){
+void Player::UpdatePosition(const double& deletTime) {
     Position += Velocity * deletTime;
 }
-bool Player::IsPlayerIsTouchingGround()
-{
+bool Player::IsPlayerIsTouchingGround() {
     return false;
 }
-// --- gets called every frame by the scene ---
-void Player::Update(){
-    PlayerMovement(GetFrameTime());
-}
+
 
 
 

@@ -8,7 +8,7 @@
 
 // classes................................................................
 
-class Player : GameObject 
+class Player : public GameObject 
 {
     private:
         hVector2 Position, Velocity;
@@ -20,10 +20,7 @@ class Player : GameObject
         void PlayerMovement(const double& deletTime); // need defining, call it in update() function
         bool IsPlayerIsTouchingGround();
         void UpdatePosition(const double& deletTime);
-        void Update(); // needs defining
-
-
-
+        s
 };
 
 

@@ -8,24 +8,22 @@
 
 // structs................................................................
 
-struct EngineSettings{
+struct EngineSettings {
     int ScreenWidth, ScreenHeight, RefreshRate;
     char* pName;
 };
 
 // classes................................................................
 
-class GameObject
-{
+class GameObject {
 protected:
     std::string tag;            // useful if we want to categories similar objects.
     bool IsStatic;              // for collision and graphics
 public:
-    virtual void Initialize();
+    virtual void Init();
     virtual void Update();
 };
-class Scene
-{
+class Scene {
 
     //tasks: ----------------------------------------------------------------  
     // #Handle Envirement collisions        ( runs a collision check once on all GameObjects in the scene with every static GameObject )
@@ -45,7 +43,7 @@ public:
     void ExecuteVerletIntegration();           
 
 };
-class GameEngine{
+class GameEngine {
 private:
     EngineSettings settings;
     Scene* scenes;
