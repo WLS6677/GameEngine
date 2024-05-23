@@ -20,8 +20,8 @@ protected:
     std::string tag;            // useful if we want to categories similar objects.
     bool IsStatic;              // for collision and graphics
 public:
-    virtual void Init();
-    virtual void Update();
+    virtual void Init() = 0;
+    virtual void Update() = 0;
 };
 class Scene {
 

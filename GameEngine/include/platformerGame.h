@@ -14,13 +14,15 @@ class Player : public GameObject
         hVector2 Position, Velocity;
     public:
         Player();
+        void Init() override;
+        void Update() override;
+
         hVector2 GetPosition();
         hVector2 GetVelocity();
 
         void PlayerMovement(const double& deletTime); // need defining, call it in update() function
         bool IsPlayerIsTouchingGround();
         void UpdatePosition(const double& deletTime);
-        s
 };
 
 

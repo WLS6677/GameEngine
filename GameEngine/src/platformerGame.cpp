@@ -15,7 +15,6 @@ void Player::Init() {
 void Player::Update() {
 
 }
-
 hVector2 Player::GetPosition() {
     return this->Position;
 }
