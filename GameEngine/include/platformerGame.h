@@ -1,6 +1,5 @@
 #pragma once
 #include "engine.h"
-#include "hVector2.h"
 #define GRAVITY_VECTOR_CONSTANT (hVector2){0, 9.8}
 #define GO_LEFT_KEY KEY_A   // should be in settings
 #define GO_RIGHT_KEY KEY_D  // should be be in settings

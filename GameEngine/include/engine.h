@@ -5,21 +5,12 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#define SETTINGS_FILE_BYTE_SIZE 0
 
 // structs................................................................
 
-struct GameSettings
-{
-
-    // this struct will be used for settings variables that are changable by the player through the Settings UI.
-    // it will be stored in the resources folder as the GameSettings.bin file and it will be loaded during game runtime.
-    // there will be only one GameSettings file with one of these "gameSettings" structs.
-    
-
+struct EngineSettings{
     int ScreenWidth, ScreenHeight, RefreshRate;
-public:
-    GameSettings();
+    char* pName;
 };
 
 // classes................................................................
@@ -30,8 +21,8 @@ protected:
     std::string tag;            // useful if we want to categories similar objects.
     bool IsStatic;              // for collision and graphics
 public:
-    void Initialize();
-    void Update();
+    virtual void Initialize();
+    virtual void Update();
 };
 class Scene
 {
@@ -54,7 +45,14 @@ public:
     void ExecuteVerletIntegration();           
 
 };
+class GameEngine{
+private:
+    EngineSettings settings;
+    Scene* scenes;
+public:
+    GameEngine();
+    void DestroyEngine();                   // cleans up the engine
+    void StartGame();                        // opens the window and loads the default scene
+};
 
 // functions................................................................
-
-void StartGame(const GameSettings& settings);

@@ -1,25 +1,6 @@
-#include "engine.h"
+#include "../include/engine.h"
 
 // structs................................................................
-
-GameSettings::GameSettings() {
-    this->ScreenHeight = 540;
-    this->ScreenWidth = 720;
-    RefreshRate = 60;
-}
-void StartGame(const GameSettings& settings) {
-    // load files onto programm for the game window including:
-    // - GameSettings.bin // for user set settings
-    //       *resolution *refresh rate *fullscreen on/off
-    // - initialize the game window.
-    //
-
-    InitWindow(settings.ScreenWidth, settings.ScreenHeight, "Game");
-    SetTargetFPS(GetMonitorRefreshRate(settings.RefreshRate));
-
-    // load the main game scene
-
-}
 
 // classes ----------------------------------------------------------------
 
@@ -29,4 +10,25 @@ void Scene::ExecuteVerletIntegration()
     // then create a hash array using the objects position
     // we u 
 }
+
+
+GameEngine::GameEngine() {
+    settings = EngineSettings{};
+}
+void GameEngine::DestroyEngine() {
+
+}   
+void GameEngine::StartGame() {
+
+    settings.pName = "Game";
+    settings.ScreenWidth = 600;
+    settings.ScreenWidth = 800;
+    settings.RefreshRate = 60;
+
+    InitWindow(settings.ScreenWidth, settings.ScreenHeight, settings.pName);
+    SetTargetFPS(settings.RefreshRate);
+}
+
+
+
 

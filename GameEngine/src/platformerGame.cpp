@@ -1,14 +1,13 @@
-#include "platformerGame.h"
-#include "raylib.h"
+#include "../include/platformerGame.h"
 
 
 
 // classes................................................................
 
 Player::Player(){
-    this->IsStatic = false;
-    this->Position = hVector2(100.0f, 100.0f);
-    this->Velocity = hVector2(0.0f, 0.0f);
+    IsStatic = false;
+    Position = hVector2(100.0f, 100.0f);
+    Velocity = hVector2(0.0f, 0.0f);
 }
 hVector2 Player::GetPosition(){
     return this->Position;
@@ -20,6 +19,7 @@ void Player::PlayerMovement(const double& deletTime){
 //handles gravity based movement
     if (!IsPlayerIsTouchingGround())
     {
+        Position += GRAVITY_VECTOR_CONSTANT * 0.5f * deletTime * deletTime;
         Velocity += GRAVITY_VECTOR_CONSTANT * deletTime;
     }
     else 
@@ -49,7 +49,7 @@ void Player::PlayerMovement(const double& deletTime){
 
 //bool Player::IsPlayerIsTouchingGround(){
     
-
+        //scene.CheckCollisionWith();
 
         // ight time to write the scene logic
 
@@ -58,7 +58,7 @@ void Player::PlayerMovement(const double& deletTime){
 
 }
 void Player::UpdatePosition(const double& deletTime){
-    this->Position += this->Velocity * deletTime;
+    Position += Velocity * deletTime;
 }
 bool Player::IsPlayerIsTouchingGround()
 {
@@ -68,5 +68,12 @@ bool Player::IsPlayerIsTouchingGround()
 void Player::Update(){
     PlayerMovement(GetFrameTime());
 }
+
+
+
+
+
+
+
 
 

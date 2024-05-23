@@ -1,33 +1,27 @@
 #include <iostream>
-#include "engine.h"
-#include "raylib.h"
-#include "platformerGame.h"
+#include "../include/engine.h"
+#include "../include/raylib.h"
 
 int main()
 {
 
-    GameSettings CurrentGameSettings; // this needs to be stored on the disk and loaded from it on runtime.
-    StartGame(CurrentGameSettings);
+    GameEngine engine{};
+    engine.StartGame();
 
-    Player Dave;
-
-    // Main game loop
+    // Main game loop 
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         // Update
         //----------------------------------------------------------------------------------
 
-        Dave.Update();
+        
 
         // Draw
         //----------------------------------------------------------------------------------
-    BeginDrawing();
+        BeginDrawing();
         ClearBackground(DARKGRAY);
-
-        DrawCircle(Dave.GetPosition().GetX(),Dave.GetPosition().GetY(),20, WHITE); //this should be done by the scene
-        
         DrawFPS(10,10);
-    EndDrawing();
+        EndDrawing();
         //----------------------------------------------------------------------------------
     }
 
