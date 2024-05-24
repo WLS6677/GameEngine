@@ -4,11 +4,8 @@
 
 
 
-
-
 #define SCENE_1_NAME "test_scene.dat"
 void OpenASceneFile();
-
 
 
 
@@ -45,18 +42,10 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
 void OpenASceneFile() {
-    std::fstream fileStream( std::string("../resources/scenes/") + SCENE_1_NAME, std::ios_base::out );
+    std::ifstream fileStream;
+    std::cout << fileStream.is_open() << "\n";
+    fileStream.open(std::string("../resources/scenes/test_scene.dat"));
     std::cout << fileStream.is_open() << "\n";
 }
 

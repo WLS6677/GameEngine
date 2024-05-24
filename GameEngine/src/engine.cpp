@@ -37,7 +37,7 @@ void GameEngine::InitEngine() {
 
     int NumberOfScenes = 1; // this should be stored in the scenes file
 
-    Scene::pEngine = this;
+    pEngine = this;
 
     for (int sceneIndex = 0; sceneIndex < NumberOfScenes; sceneIndex++) {
     Scene* scene = new Scene();         // this should be from the scenes file

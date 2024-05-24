@@ -10,6 +10,10 @@ class GameObject;
 class Scene;
 class GameEngine;
 
+// global variables since for some reason static class members dont want to work.
+static Scene* pScene;
+static GameEngine* pEngine;
+
 // structs................................................................
 
 struct EngineSettings {
@@ -25,9 +29,7 @@ protected:
     bool IsStatic;              // for collision and graphics
 public:
 
-    static Scene* pScene;
-
-    virtual ~GameObject() = 0;
+    virtual ~GameObject() = default;
     virtual void Init() = 0;
     virtual void Update() = 0;
 };
@@ -42,8 +44,6 @@ private:
     std::vector<GameObject> objects;
 public:
 ////////////////////////////////core////////////////////////////////
-
-    static GameEngine* pEngine;
 
     Scene()= default;
     ~Scene() = default;
