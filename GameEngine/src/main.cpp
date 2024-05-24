@@ -42,11 +42,12 @@ int main()
 
 
 
-void OpenASceneFile() {
-    std::ifstream fileStream;
-    std::cout << fileStream.is_open() << "\n";
-    fileStream.open(std::string("../resources/scenes/test_scene.dat"));
-    std::cout << fileStream.is_open() << "\n";
+void CreateASceneFile() {
+    std::ofstream fileStream("resources/scenes/test_scene.txt");
+    std::cout << fileStream.is_open() << '\n';
+
+    fileStream << "HELLO FILE" << std::endl;
+    fileStream.close();
 }
 
 
