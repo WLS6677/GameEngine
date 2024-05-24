@@ -45,12 +45,16 @@ public:
 };
 class GameEngine {
 private:
-    EngineSettings settings;
-    Scene* scenes;
+    EngineSettings settings{};
+    std::vector<Scene*> scenes{};
+    Scene* CurrentScene;                // this is the scene thats currently running
 public:
     GameEngine();
-    void DestroyEngine();                   // cleans up the engine
-    void StartGame();                        // opens the window and loads the default scene
+    void InitEngine();                          // loads from disk to memory the scenes, sprites sheets, and audio
+    void DestroyEngine();                       // deletes everything that was loaded from InitEngine from memory
+
+    void UpdateScene();                         // runs all of the code for running the scene
+
 };
 
 // functions................................................................
