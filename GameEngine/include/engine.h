@@ -6,6 +6,10 @@
 #include <vector>
 #include <string>
 
+class GameObject;
+class Scene;
+class GameEngine;
+
 // structs................................................................
 
 struct EngineSettings {
@@ -20,6 +24,10 @@ protected:
     std::string tag;            // useful if we want to categories similar objects.
     bool IsStatic;              // for collision and graphics
 public:
+
+    static Scene* pScene;
+
+    virtual ~GameObject() = 0;
     virtual void Init() = 0;
     virtual void Update() = 0;
 };
@@ -34,11 +42,17 @@ private:
     std::vector<GameObject> objects;
 public:
 ////////////////////////////////core////////////////////////////////
-    Scene();
-    ~Scene();
-    void InitializeScene();                    // load the scene from memory and call the intitialize() function for each object.
-    void UpdateScene();                        // call Update() for each object in the scene.
-    void AddObject(GameObject& object);        // adds the object to the scene.
+
+    static GameEngine* pEngine;
+
+    Scene()= default;
+    ~Scene() = default;
+    void InitScene();                           // load the scene from memory and call the intitialize() function for each object.
+    void DestroyScene();                        // empties all the allocated memory for the objects inside the scene
+
+    void UpdateScene();                         // call Update() for each object in the scene.
+    void AddObject(GameObject& object);         // adds the object to the scene.
+
 ////////////////////////////////Optional/Features////////////////////////////////
     void ExecuteVerletIntegration();           
 
@@ -47,7 +61,7 @@ class GameEngine {
 private:
     EngineSettings settings{};
     std::vector<Scene*> scenes{};
-    Scene* CurrentScene;                // this is the scene thats currently running
+    Scene* pCurrentScene;                // this is the scene thats currently running
 public:
     GameEngine();
     void InitEngine();                          // loads from disk to memory the scenes, sprites sheets, and audio
